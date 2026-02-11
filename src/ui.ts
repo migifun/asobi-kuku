@@ -24,7 +24,7 @@ function showStartScreen(): void {
 
   app.innerHTML = `
     <div class="screen start-screen">
-      <h1 class="title">ハルくんの<br>くくチャレンジ</h1>
+      <h1 class="title">くくチャレンジ</h1>
       <div class="mode-section">
         <div class="mode-label">なんのだん？</div>
         <div class="dan-grid">
