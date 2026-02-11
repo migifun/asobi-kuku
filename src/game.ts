@@ -12,11 +12,12 @@ const allAnswers = [...new Set(kukuData.map((e) => e.answer))].sort(
 
 let lastEntry: KukuEntry | null = null;
 
-export function generateQuestion(): Question {
+export function generateQuestion(dan?: number): Question {
+  const pool = dan ? kukuData.filter((e) => e.a === dan) : kukuData;
   let entry: KukuEntry;
   do {
-    entry = kukuData[Math.floor(Math.random() * kukuData.length)];
-  } while (entry === lastEntry);
+    entry = pool[Math.floor(Math.random() * pool.length)];
+  } while (entry === lastEntry && pool.length > 1);
   lastEntry = entry;
 
   const choices = generateChoices(entry.answer);

@@ -51,7 +51,7 @@ body {
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #fff;
   text-shadow:
@@ -61,11 +61,52 @@ body {
   margin-bottom: 40px;
 }
 
+.mode-section {
+  width: 100%;
+}
+
+.mode-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dan-btn {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 16px 0;
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.dan-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
 .start-btn {
   font-family: "Zen Maru Gothic", sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  padding: 20px 60px;
+  padding: 20px;
+  width: 100%;
   border: none;
   border-radius: 50px;
   background: #ff6b6b;
@@ -84,6 +125,48 @@ body {
   box-shadow:
     0 2px 0 #d35555,
     0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Back Button ===== */
+
+.back-btn {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #666;
+  cursor: pointer;
+  align-self: flex-start;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.back-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* ===== Game Header & Progress ===== */
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.progress {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 6px 16px;
+  border-radius: 50px;
 }
 
 /* ===== Game Screen ===== */
@@ -112,6 +195,10 @@ body {
   font-weight: 700;
   color: #999;
   margin-top: 12px;
+}
+
+.reading-answer {
+  color: #ff6b6b;
 }
 
 /* ===== Choices ===== */
@@ -241,6 +328,201 @@ body {
   box-shadow:
     0 1px 0 #ddd,
     0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Collection Button (Start Screen) ===== */
+
+.collection-btn {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 14px 32px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.collection-btn:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+/* ===== Result Screen ===== */
+
+.result-screen {
+  text-align: center;
+  gap: 32px;
+}
+
+.result-score {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 24px 32px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.result-score-label {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #333;
+}
+
+.result-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.result-back-btn {
+  align-self: center;
+  font-size: 1.2rem;
+  padding: 12px 32px;
+}
+
+/* ===== Item Reward ===== */
+
+.item-reward {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: rewardPop 0.5s ease;
+}
+
+.reward-emoji {
+  font-size: 6rem;
+  animation: rewardBounce 1s ease infinite;
+}
+
+.reward-text {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.reward-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rewardPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rewardBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ===== Collection Screen ===== */
+
+.collection-screen {
+  text-align: center;
+}
+
+.collection-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.collection-count {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 16px;
+  border-radius: 50px;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.item-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-card.locked {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.item-emoji {
+  font-size: 1.8rem;
+}
+
+.item-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.item-card.locked .item-name {
+  color: #999;
+}
+
+.collection-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.reset-btn {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(231, 76, 60, 0.8);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.reset-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
 }
 
 /* ===== Responsive ===== */
