@@ -17,6 +17,7 @@
 - アイテムコレクション要素（全30種）
 - 効果音つき（Web Audio API、音声ファイル不要）
 - スマホ・タブレット対応
+- PWA対応（ホーム画面に追加してオフラインでも動作）
 
 ## 開発
 
@@ -28,5 +29,6 @@ npm run dev
 ## 技術スタック
 
 - Vite + TypeScript
+- PWA（Service Worker + Web App Manifest）
 - Web Audio API（効果音）
 - localStorage（アイテム保存）
